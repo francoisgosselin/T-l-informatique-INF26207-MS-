@@ -6,7 +6,7 @@ from pathlib import Path
 HOST = "127.0.0.1"
 PORT = 12345
 
-
+#Fonction définie, mais jamais utilisée.
 def flip_first_bit(data: bytes) -> bytes:
     if len(data) == 0:
         return data
@@ -27,4 +27,5 @@ payload = nonce + msg + b"\x00" + h
 with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
     s.sendto(payload, (HOST, PORT))
     data, _ = s.recvfrom(64)
+
     print("Réponse:", data.decode("utf-8", errors="replace"))
