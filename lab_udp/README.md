@@ -3,7 +3,7 @@
 
 ## Partie 2 - Question : pourquoi len(s) peut etre different de len(b) ?
 
-En Python, len(s) compte le nombre de caracteres Unicode, tandis que len(b)
+En Python, len(s) compte le nombre de caracteres Unicode  **utf-8 pour être précis** , tandis que len(b)
 compte le nombre d'octets. En UTF-8, certains caracteres comme les accents (e, a, c),
 les lettres speciales (o, -) ou les emojis sont encodes sur 2, 3 ou 4 octets.
 Ainsi, un seul caractere peut occuper plusieurs octets, ce qui fait que len(b) >= len(s)
